@@ -1,0 +1,18 @@
+.App {
+  .photoList {
+    display: inline;
+  }
+  .thumb {
+    width: 50px;
+  }
+  .bigImageContainer {
+    width: 75%;
+    margin: 1em auto;
+    padding: 2em;
+    border: 1px solid lightgrey;
+  }
+  .bigImage {
+    width: 100%;
+    background-color: darkgrey;
+  }
+}
