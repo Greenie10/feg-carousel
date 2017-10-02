@@ -12,7 +12,12 @@
     border: 1px solid lightgrey;
   }
   .bigImage {
-    width: 100%;
     background-color: darkgrey;
+    &.selected {
+      width: 100%;
+    }
+    &.notSelected {
+      width: 2%;
+    }
   }
 }

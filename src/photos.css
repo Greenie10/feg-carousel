@@ -11,5 +11,8 @@
   border: 1px solid lightgrey; }
 
 .App .bigImage {
-  width: 100%;
   background-color: darkgrey; }
+  .App .bigImage.selected {
+    width: 100%; }
+  .App .bigImage.notSelected {
+    width: 2%; }
