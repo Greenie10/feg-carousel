@@ -1,15 +1,21 @@
 .App {
+  background-color: black;
+
+  h1 {
+    color: white;
+  }
+
   ul {
     margin: 1em auto;
   }
   caption {
     display: block;
-    margin: 1em auto;
     font-family: fantasy;
     font-size: 2em;
   }
   .photoList {
     display: inline;
+    margin-right: 10px;
   }
   .thumb {
     width: 50px;
@@ -18,12 +24,14 @@
     width: 75%;
     margin: 1em auto;
     padding: 2em;
-    border: 1px solid lightgrey;
+    background-color: white;
   }
   .bigImage {
     background-color: darkgrey;
     display: block;
     margin: 1em auto;
     min-width: 100px;
+    min-height: 100px;
+    vertical-align: middle;
   }
 }

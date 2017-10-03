@@ -1,26 +1,27 @@
-.App ul {
-  margin: 1em auto; }
-
-.App caption {
-  display: block;
-  margin: 1em auto;
-  font-family: fantasy;
-  font-size: 2em; }
-
-.App .photoList {
-  display: inline; }
-
-.App .thumb {
-  width: 50px; }
-
-.App .bigImageContainer {
-  width: 75%;
-  margin: 1em auto;
-  padding: 2em;
-  border: 1px solid lightgrey; }
-
-.App .bigImage {
-  background-color: darkgrey;
-  display: block;
-  margin: 1em auto;
-  min-width: 100px; }
+.App {
+  background-color: black; }
+  .App h1 {
+    color: white; }
+  .App ul {
+    margin: 1em auto; }
+  .App caption {
+    display: block;
+    font-family: fantasy;
+    font-size: 2em; }
+  .App .photoList {
+    display: inline;
+    margin-right: 10px; }
+  .App .thumb {
+    width: 50px; }
+  .App .bigImageContainer {
+    width: 75%;
+    margin: 1em auto;
+    padding: 2em;
+    background-color: white; }
+  .App .bigImage {
+    background-color: darkgrey;
+    display: block;
+    margin: 1em auto;
+    min-width: 100px;
+    min-height: 100px;
+    vertical-align: middle; }

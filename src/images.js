@@ -16,6 +16,7 @@ class PhotoGallery extends Component {
     let elem = photos.photos;
     return (
       <div>
+        <h1>Photo Gallery</h1>
         <div className="bigImageContainer">
           <img
             className="bigImage"
