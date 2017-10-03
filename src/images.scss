@@ -1,4 +1,13 @@
 .App {
+  ul {
+    margin: 1em auto;
+  }
+  caption {
+    display: block;
+    margin: 1em auto;
+    font-family: fantasy;
+    font-size: 2em;
+  }
   .photoList {
     display: inline;
   }
@@ -13,11 +22,8 @@
   }
   .bigImage {
     background-color: darkgrey;
-    &.selected {
-      width: 100%;
-    }
-    &.notSelected {
-      width: 2%;
-    }
+    display: block;
+    margin: 1em auto;
+    min-width: 100px;
   }
 }

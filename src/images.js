@@ -1,31 +1,15 @@
 import React, { Component } from 'react';
 import photos from './image-data.json';
-import './photos.css';
+import './images.css';
 
-// class PhotoList extends Component {
-//   render() {
-//     let elem = data.photos;
-//     return (
-//       <ul className="gallery">
-//         {Object.keys(elem).map(i => (
-//           <li key={i} className="photoList">
-//             <img className="thumb" src={elem[i].url} alt={elem[i].name} />
-//           </li>
-//         ))}
-//       </ul>
-//     );
-//   }
-// }
-
-class BigImage extends Component {
+class PhotoGallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { displayedImage: 'hello' };
-    this.selectImage = this.selectImage.bind(this);
+    this.state = { displayImage: '', displayCaption: '' };
+    this.showBigImage = this.showBigImage.bind(this);
   }
-  selectImage(imageSrc) {
-    console.log(imageSrc);
-    this.setState({ displayedImage: imageSrc });
+  showBigImage(image, caption) {
+    this.setState({ displayImage: image, displayCaption: caption });
   }
 
   render() {
@@ -33,15 +17,20 @@ class BigImage extends Component {
     return (
       <div>
         <div className="bigImageContainer">
-          <img className="bigImage" src={this.state.displayedImage} alt="" />
+          <img
+            className="bigImage"
+            src={this.state.displayImage}
+            alt={this.state.displayCaption}
+          />
+          <caption>{this.state.displayCaption}</caption>
         </div>
 
-        <ul className="gallery">
+        <ul>
           {Object.keys(elem).map(i => (
             <li key={i} className="photoList">
               <img
                 className="thumb"
-                onClick={() => this.selectImage(elem[i].url)}
+                onClick={() => this.showBigImage(elem[i].url, elem[i].name)}
                 src={elem[i].url}
                 alt={elem[i].name}
               />
@@ -53,7 +42,4 @@ class BigImage extends Component {
   }
 }
 
-export {
-  // PhotoList as default,
-  BigImage as default,
-};
+export default PhotoGallery;
