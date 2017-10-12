@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import photos from './image-data.json';
+import data from './image-data.json';
 import './images.css';
 
 class PhotoGallery extends Component {
   constructor(props) {
     super(props);
-    this.state = { displayImage: '', displayCaption: '' };
-    this.showBigImage = this.showBigImage.bind(this);
+    this.photoData = data.photos;
+    this.state = {
+      displayImage: this.photoData[0].url,
+      displayCaption: this.photoData[0].name,
+    };
   }
+
   showBigImage(image, caption) {
     this.setState({ displayImage: image, displayCaption: caption });
   }
 
   render() {
-    let elem = photos.photos;
     return (
       <div>
         <h1>Photo Gallery</h1>
@@ -23,20 +26,23 @@ class PhotoGallery extends Component {
             src={this.state.displayImage}
             alt={this.state.displayCaption}
           />
-          <caption>{this.state.displayCaption}</caption>
+          <div className="caption">{this.state.displayCaption}</div>
         </div>
 
         <ul>
-          {Object.keys(elem).map(i => (
-            <li key={i} className="photoList">
-              <img
-                className="thumb"
-                onClick={() => this.showBigImage(elem[i].url, elem[i].name)}
-                src={elem[i].url}
-                alt={elem[i].name}
-              />
-            </li>
-          ))}
+          {this.photoData.map(photoObject => {
+            return (
+              <li className="photoList" key={photoObject.id}>
+                <img
+                  className="thumb"
+                  src={photoObject.url}
+                  alt={photoObject.name}
+                  onClick={() =>
+                    this.showBigImage(photoObject.url, photoObject.name)}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
     );

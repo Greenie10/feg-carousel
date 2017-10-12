@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .App {
   background-color: black;
 
@@ -8,10 +10,11 @@
   ul {
     margin: 1em auto;
   }
-  caption {
+  .caption {
     display: block;
-    font-family: fantasy;
-    font-size: 2em;
+    font-size: 7vw;
+    color: white;
+    padding-top: 5px;
   }
   .photoList {
     display: inline;
@@ -21,17 +24,16 @@
     width: 50px;
   }
   .bigImageContainer {
+    margin: 0 auto 1em auto;
     width: 75%;
-    margin: 1em auto;
-    padding: 2em;
-    background-color: white;
+    max-width: 800px;
+    border: 1px solid darkgrey;
   }
   .bigImage {
     background-color: darkgrey;
     display: block;
-    margin: 1em auto;
-    min-width: 100px;
     min-height: 100px;
-    vertical-align: middle;
+    width: 100%;
+    max-width: 500px;
   }
 }
