@@ -18,8 +18,9 @@ class PhotoGallery extends Component {
 
   render() {
     return (
-      <div>
+      <div className="galleryContainer">
         <h1>Photo Gallery</h1>
+        <div className="previous">&lt;</div>
         <div className="bigImageContainer">
           <img
             className="bigImage"
@@ -28,6 +29,7 @@ class PhotoGallery extends Component {
           />
           <div className="caption">{this.state.displayCaption}</div>
         </div>
+        <div className="next">&gt;</div>
 
         <ul>
           {this.photoData.map(photoObject => {

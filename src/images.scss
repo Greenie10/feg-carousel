@@ -3,6 +3,32 @@
 .App {
   background-color: black;
 
+  .galleryContainer {
+    position: relative;
+    max-width: 800px;
+  }
+  .previous,
+  .next {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    @media (max-width: $xs-screen) {
+      font-size: 2em;
+    }
+    @media (max-width: $xxs-screen) {
+      font-size: 1em;
+    }
+  }
+  .previous {
+    margin: 10px;
+    left: 0;
+  }
+  .next {
+    margin: 10px;
+    right: 0;
+  }
   h1 {
     color: white;
   }
@@ -34,6 +60,5 @@
     display: block;
     min-height: 100px;
     width: 100%;
-    max-width: 500px;
   }
 }

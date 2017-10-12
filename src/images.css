@@ -1,5 +1,29 @@
 .App {
   background-color: black; }
+  .App .galleryContainer {
+    position: relative;
+    max-width: 800px; }
+  .App .previous,
+  .App .next {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 40%; }
+    @media (max-width: 480px) {
+      .App .previous,
+      .App .next {
+        font-size: 2em; } }
+    @media (max-width: 320px) {
+      .App .previous,
+      .App .next {
+        font-size: 1em; } }
+  .App .previous {
+    margin: 10px;
+    left: 0; }
+  .App .next {
+    margin: 10px;
+    right: 0; }
   .App h1 {
     color: white; }
   .App ul {
@@ -23,5 +47,4 @@
     background-color: darkgrey;
     display: block;
     min-height: 100px;
-    width: 100%;
-    max-width: 500px; }
+    width: 100%; }
