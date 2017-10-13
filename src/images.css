@@ -1,13 +1,14 @@
 .App {
-  background-color: black; }
+  background-color: black;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  color: white; }
   .App .galleryContainer {
     position: relative;
-    max-width: 800px; }
+    max-width: 700px;
+    margin: 0 auto; }
   .App .previous,
   .App .next {
     font-size: 3em;
-    color: white;
-    font-weight: bold;
     position: absolute;
     top: 40%; }
     @media (max-width: 480px) {
@@ -18,6 +19,9 @@
       .App .previous,
       .App .next {
         font-size: 1em; } }
+    .App .previous:hover,
+    .App .next:hover {
+      cursor: pointer; }
   .App .previous {
     margin: 10px;
     left: 0; }
@@ -25,26 +29,31 @@
     margin: 10px;
     right: 0; }
   .App h1 {
-    color: white; }
+    font-weight: normal; }
   .App ul {
-    margin: 1em auto; }
+    margin: 1em auto;
+    padding: 0; }
   .App .caption {
     display: block;
-    font-size: 7vw;
+    font-size: 5vw;
     color: white;
     padding-top: 5px; }
   .App .photoList {
     display: inline;
     margin-right: 10px; }
+    .App .photoList:last-child {
+      margin-right: 0; }
   .App .thumb {
     width: 50px; }
+    .App .thumb:hover {
+      cursor: pointer; }
   .App .bigImageContainer {
     margin: 0 auto 1em auto;
     width: 75%;
-    max-width: 800px;
-    border: 1px solid darkgrey; }
+    border: 1px solid darkgrey;
+    background-color: black;
+    display: block; }
   .App .bigImage {
-    background-color: darkgrey;
     display: block;
     min-height: 100px;
     width: 100%; }

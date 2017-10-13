@@ -7,29 +7,62 @@ class PhotoGallery extends Component {
     super(props);
     this.photoData = data.photos;
     this.state = {
-      displayImage: this.photoData[0].url,
+      displayUrl: this.photoData[0].url,
       displayCaption: this.photoData[0].name,
+      currentPhoto: 99,
     };
   }
 
-  showBigImage(image, caption) {
-    this.setState({ displayImage: image, displayCaption: caption });
+  previousPhoto() {
+    let nextPhotoIndex = this.state.currentPhoto - 1;
+    if (nextPhotoIndex < 0) {
+      nextPhotoIndex = this.photoData.length - 1;
+    }
+    this.setState({
+      displayUrl: this.photoData[nextPhotoIndex].url,
+      displayCaption: this.photoData[nextPhotoIndex].name,
+      currentPhoto: nextPhotoIndex,
+    });
+  }
+  nextPhoto() {
+    let nextPhotoIndex = this.state.currentPhoto + 1;
+    if (nextPhotoIndex >= this.photoData.length) {
+      nextPhotoIndex = 0;
+    }
+
+    this.setState({
+      displayUrl: this.photoData[nextPhotoIndex].url,
+      displayCaption: this.photoData[nextPhotoIndex].name,
+      currentPhoto: nextPhotoIndex,
+    });
+  }
+
+  showBigPhoto(url, caption, id) {
+    this.setState({
+      displayUrl: url,
+      displayCaption: caption,
+      currentPhoto: id,
+    });
   }
 
   render() {
     return (
       <div className="galleryContainer">
         <h1>Photo Gallery</h1>
-        <div className="previous">&lt;</div>
+        <div className="previous" onClick={() => this.previousPhoto()}>
+          &lt;
+        </div>
         <div className="bigImageContainer">
           <img
             className="bigImage"
-            src={this.state.displayImage}
+            src={this.state.displayUrl}
             alt={this.state.displayCaption}
           />
           <div className="caption">{this.state.displayCaption}</div>
         </div>
-        <div className="next">&gt;</div>
+        <div className="next" onClick={() => this.nextPhoto()}>
+          &gt;
+        </div>
 
         <ul>
           {this.photoData.map(photoObject => {
@@ -40,7 +73,11 @@ class PhotoGallery extends Component {
                   src={photoObject.url}
                   alt={photoObject.name}
                   onClick={() =>
-                    this.showBigImage(photoObject.url, photoObject.name)}
+                    this.showBigPhoto(
+                      photoObject.url,
+                      photoObject.name,
+                      photoObject.id
+                    )}
                 />
               </li>
             );

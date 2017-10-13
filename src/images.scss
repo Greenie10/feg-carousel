@@ -2,16 +2,17 @@
 
 .App {
   background-color: black;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  color: white;
 
   .galleryContainer {
     position: relative;
-    max-width: 800px;
+    max-width: 700px;
+    margin: 0 auto;
   }
   .previous,
   .next {
     font-size: 3em;
-    color: white;
-    font-weight: bold;
     position: absolute;
     top: 40%;
     @media (max-width: $xs-screen) {
@@ -19,6 +20,9 @@
     }
     @media (max-width: $xxs-screen) {
       font-size: 1em;
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
   .previous {
@@ -30,33 +34,40 @@
     right: 0;
   }
   h1 {
-    color: white;
+    font-weight: normal;
   }
 
   ul {
     margin: 1em auto;
+    padding: 0;
   }
   .caption {
     display: block;
-    font-size: 7vw;
+    font-size: 5vw;
     color: white;
     padding-top: 5px;
   }
   .photoList {
     display: inline;
     margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   .thumb {
     width: 50px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .bigImageContainer {
     margin: 0 auto 1em auto;
     width: 75%;
-    max-width: 800px;
     border: 1px solid darkgrey;
+    background-color: black;
+    display: block;
   }
   .bigImage {
-    background-color: darkgrey;
     display: block;
     min-height: 100px;
     width: 100%;
