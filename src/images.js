@@ -9,7 +9,7 @@ class PhotoGallery extends Component {
     this.state = {
       displayUrl: this.photoData[0].url,
       displayCaption: this.photoData[0].name,
-      currentPhoto: 99,
+      currentPhoto: 0,
     };
   }
 
