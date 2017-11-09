@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import data from './image-data.json';
-import './images.css';
+import './photo-gallery.css';
 
 class PhotoGallery extends Component {
   constructor(props) {

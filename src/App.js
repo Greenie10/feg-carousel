@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import PhotoGallery from './images';
+import PhotoGallery from './photo-gallery';
 
 class App extends Component {
   render() {
